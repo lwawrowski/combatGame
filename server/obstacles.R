@@ -1,5 +1,4 @@
 # linear_model ------------------------------------------------------------
-# współczynniki prostej przechodzącej przez dwa punkty
 
 linear_model <- function(a,b){
   
@@ -19,7 +18,6 @@ linear_model <- function(a,b){
 
 
 # obstacles_update --------------------------------------------------------
-# aktualizacja przeszkód w grze po wykonaniu akcji
 
 obstacles_update <- function(un, obst_game){
   
@@ -35,17 +33,15 @@ obstacles_update <- function(un, obst_game){
 
 
 # obstacles_chance --------------------------------------------------------
-# obliczenie szansy na trafienie w zależności od przeszkód
 
 obstacles_chance <- function(pid, aid, un){
   
-  # obiekt wynikowy
   obst_chance_type <- list(chance = 0, type12 = NULL, type45 = NULL)
   
-  # prawdopodobieństwo trafienia w zależności od kolejności i typu przeszkody
-  obst_p <- data.frame(order=c(rep(1,5), rep(2,5)), # kolejność: 1 - najbliższa, 2 - kolejne przeszkody
-                       type=c(rep(1:5,2)), # typ: 1 - wysoka, 2 - niska, 3 - cywil, 4 - gracz 1, 5 - gracz 2
-                       prob=c(1,0.75,1,1,1,0.5,0.25,0.75,0.75,0.75)) # prawdopodobieństwa
+  
+  obst_p <- data.frame(order=c(rep(1,5), rep(2,5)), 
+                       type=c(rep(1:5,2)), 
+                       prob=c(1,0.75,1,1,1,0.5,0.25,0.75,0.75,0.75))
   
   ct <- maps$grid_ct %>%
     mutate_if(is.numeric, round, 4) %>%
@@ -55,7 +51,6 @@ obstacles_chance <- function(pid, aid, un){
   
   if(nrow(d) == 2){
     
-    # przypadek linii wertykalnej
     vline <- FALSE
     if(d$x[1] == d$x[2]){
       d$x[1] <- d$x[1] + 0.0001
@@ -75,10 +70,8 @@ obstacles_chance <- function(pid, aid, un){
         mutate(otl=y >= d$y[1] & y <= d$y[2] & x >= d$x[1] - 0.0001 & x <= d$x[2]) # on the line
     }
     
-    # jakie przeszkody są na linii strzału
     ids <- ctm$id[ctm$otl==TRUE]
     
-    # gracz atakujący na początku linii
     if(pid != ids[1]){
       ids <- rev(ids)
     }
