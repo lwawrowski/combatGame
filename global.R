@@ -1,0 +1,10 @@
+library(shinydashboard)
+library(sp)
+library(rgeos)
+library(tidyverse)
+library(V8)
+
+load("data/maps.RData")
+load("data/units.RData")
+load("data/dist_matrix.RData")
+load("data/dist_matrix_exact.RData")

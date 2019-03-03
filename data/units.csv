@@ -1,0 +1,8 @@
+"order" "name" "hp" "init" "mobil" "attack" "defence" "n_shots" "noise" "range_min" "range_max" "dest_area" "price" "acc" "acc_min" "acc_max"
+"1" 1 "noz" 100 7 10 5 0 1 1 1 4 1 6 2 8 98
+"2" 2 "pistolet" 100 5 8 3 0 2 3 1 5 1 7 4 6 96
+"3" 3 "shotgun" 100 5 8 4 0 1 6 1 5 3 8 3 7 97
+"4" 4 "karabin" 100 4 6 6 0 1 6 1 8 1 10 6 4 94
+"5" 5 "snajper" 80 2 3 8 0 1 3 3 10 1 12 7 3 93
+"6" 6 "rakieta" 100 3 5 7 0 1 8 1 10 7 15 5 5 95
+"7" 7 "general" 120 4 8 8 2 1 6 1 8 1 20 8 2 92
