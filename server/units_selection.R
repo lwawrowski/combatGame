@@ -5,7 +5,7 @@ units_players <- reactiveValues(player1 = NULL, player2 = NULL)
 # draw units --------------------------------------------------------------
 
 # points to use
-points <- 100
+points <- 50
 
 draw_units <- function(points = 50){
   
@@ -16,7 +16,7 @@ draw_units <- function(points = 50){
   points_left <- points
   sum <- 0
   
-  while(points_left >= 6 & nrow(units_drawned) <= 4){ # 9
+  while(points_left >= 6){
     
     unit_draw <- units_draw %>%
       dplyr::filter(price <= points_left) %>%

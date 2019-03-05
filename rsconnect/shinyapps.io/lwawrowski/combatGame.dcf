@@ -1,0 +1,13 @@
+name: combatGame
+title: combatGame
+username:
+account: lwawrowski
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 763967
+bundleId: 1916408
+url: https://lwawrowski.shinyapps.io/combatGame/
+when: 1551775772.65031
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: combat.png|hex.R|README.md|units.R
